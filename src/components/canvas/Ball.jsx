@@ -11,7 +11,6 @@ import {
 import CanvasLoader from "../Loader";
 
 const Ball = (props) => {
-  
   const [decal] = useTexture([props.imgUrl]);
 
   return (
@@ -22,6 +21,7 @@ const Ball = (props) => {
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
           color='#fff8eb'
+          polygonOffset
           polygonOffsetFactor={-5}
           flatShading
         />
@@ -29,8 +29,8 @@ const Ball = (props) => {
           position={[0, 0, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
           scale={1}
-          flatShading
           map={decal}
+          flatShading
         />
       </mesh>
     </Float>
